@@ -1,0 +1,14 @@
+<p></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item">Identifiant de l'appareil : <strong>{{id}}</strong></li>
+        <li class="list-group-item">Nome : <strong>{{appareil.name}}</strong></li>
+        <li class="list-group-item">Statut : <strong>{{appareil.statut}}</strong></li>
+        <li class="list-group-item">Date de création : <strong>{{appareil.dateCreation | date: 'dd/MM/yyyy'}}</strong></li>
+      </ul>
+      <a routerLink="/appareil" >Retour à la liste</a>
+    </div>
+  </div>
+</div>

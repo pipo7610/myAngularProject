@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+      <ul class="list-group">
+        <h3> Date du jour : {{lastUpdate | async | date : 'dd/MM/yyyy'}}</h3>
+
+        <app-appareil *ngFor="let p of appareils;let i = index"
+                      [indexApp]="i"
+                      [appareilName]="p.appareilName"
+                      [appareilStatus]="p.appareilStatus"
+                      [appareilId] = "p.id"
+                      [dateCreation]="p.dateCreation"></app-appareil>
+
+      </ul>
+      <button class="btn btn-success"
+              [disabled]="!isAuth"
+              (click)="OnToutAllumer()">Allumer</button>
+      <button class="btn btn-danger"
+              [disabled]="!isAuth"
+              (click)="OnToutEteindre()">Eteindre</button>
+    </div>
+  </div>
+</div>

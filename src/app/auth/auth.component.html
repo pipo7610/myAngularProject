@@ -1,0 +1,12 @@
+<p></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button *ngIf="authStatuts== false" class="btn btn-success"
+              (click)="onSignIn()">S'authentifier</button>
+      <button *ngIf="authStatuts==true"  class="btn btn-danger"
+              (click)="onSignOut()">Se déconnecter</button>
+    </div>
+  </div>
+</div>
+
