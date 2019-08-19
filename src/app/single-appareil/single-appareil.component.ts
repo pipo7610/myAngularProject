@@ -12,7 +12,7 @@ import {AppareilService} from '../services/appareil.service';
 export class SingleAppareilComponent implements OnInit {
 
   id: number;
-  appareil: any= {
+  appareil: any = {
     id: 1,
     name: 'Name',
     statut: 'Statut',
@@ -21,7 +21,7 @@ export class SingleAppareilComponent implements OnInit {
   constructor(private appareilService: AppareilService , private router: ActivatedRoute) { }
 
   ngOnInit() {
-   this.id = this.router.snapshot.params['id'];
+   this.id = this.router.snapshot.params[ + 'id' ];
    console.log(this.appareilService.getAppareilbyId(this.id).appareilName);
    this.appareil.name = this.appareilService.getAppareilbyId(this.id).appareilName;
    this.appareil.statut = this.appareilService.getAppareilbyId(this.id).appareilStatus;

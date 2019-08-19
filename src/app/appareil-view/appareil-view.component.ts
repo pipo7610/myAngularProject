@@ -8,7 +8,6 @@ import {AppareilService} from '../services/appareil.service';
   styleUrls: ['./appareil-view.component.scss']
 })
 export class AppareilViewComponent implements OnInit {
-  title = 'ahmed';
   isAuth = false;
 
   appareils: any[];
@@ -20,28 +19,21 @@ export class AppareilViewComponent implements OnInit {
       }, 2000
     );
   });
-  nowDate = new Promise((resolve, reject) => {
-    setTimeout(
-      ()=> {
-        resolve('Ahmed Is Here !');
-      }  , 4000
-    )}
-  )
 
-  constructor(private service: AppareilService){
+  constructor(private service: AppareilService) {
     setTimeout(
-      ()=> {
+      () => {
         this.isAuth = true;
       }  , 4000
     );
   }
 
-  OnToutAllumer(){
+  OnToutAllumer() {
     this.service.switchOnAll();
   }
 
 
-  OnToutEteindre(){
+  OnToutEteindre() {
     this.service.switchOffAll();
   }
   ngOnInit(): void {

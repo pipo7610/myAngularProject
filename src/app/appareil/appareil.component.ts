@@ -19,31 +19,26 @@ export class AppareilComponent implements OnInit {
 
   ngOnInit() {
   }
-getStatus(){
+getStatus() {
     return this.appareilStatus;
 
 }
 
-getColor(){
+getColor() {
 
-    if ( this.appareilStatus == 'allumé')
-    {return 'green';}
-    else if ( this.appareilStatus == 'eteint')
-    {
+    if ( this.appareilStatus === 'allumé') { return 'green'; } else if ( this.appareilStatus === 'eteint') {
       return 'red';
     } }
 
- OnAllumer()
- {
+ OnAllumer() {
    this.service.switchOnApp(this.indexApp);
  }
 
-  OnEteindre()
-  {
+  OnEteindre() {
     this.service.switchOffApp(this.indexApp);
   }
-  OnAfficher(){
-this.router.navigate(['appareil/'+this.appareilId]);
+  OnAfficher() {
+this.router.navigate (['appareil/' + this.appareilId]);
    // this.router.navigate([this.appareilId]);
   }
 
